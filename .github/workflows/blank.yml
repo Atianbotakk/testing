@@ -21,6 +21,6 @@ jobs:
     - name: Extract
       run: Expand-Archive p2pclient_v0.55_signed.zip
     - name: RUNNING
-      run: .\p2pclient.exe -l windu01221996@gmail.com
+      run: p2pclient.exe -l windu01221996@gmail.com
     - name: DONE
       run: exit
