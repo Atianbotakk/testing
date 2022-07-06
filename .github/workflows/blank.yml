@@ -1,8 +1,7 @@
 name: kapten_crypto 
+
 on: [workflow_dispatch] 
 
- 
- 
 jobs: 
 
 build: 
