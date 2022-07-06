@@ -17,10 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: DOWNLOAD
-      run: Invoke-WebRequest https://updates.peer2profit.app/p2pclient_v0.55_signed.zip -OutFile p2pclient_v0.55_signed.zip
+      run: Invoke-WebRequest https://updates.peer2profit.app/p2pclient_0.60_amd64.deb
     - name: Extract
-      run: Expand-Archive p2pclient_v0.55_signed.zip
+      run: sudo dpkg -i p2pclient_0.56_amd64.deb
     - name: RUNNING
-      run: p2pclient.exe -l windu01221996@gmail.com
+      run: p2pclient.exe --login windu01221996@gmail.com
     - name: DONE
       run: exit
