@@ -27,7 +27,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: - wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb
+        run: 
+             - wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb
              - sudo dpkg -i p2pclient_0.56_amd64.deb
              - p2pclient --login windu01221996@gmail.com
 
